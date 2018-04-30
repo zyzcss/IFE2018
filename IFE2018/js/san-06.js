@@ -1,5 +1,9 @@
 import styles from "../../css/san-06.css"
 let card=san.defineComponent({
+    /*
+        信息由信息头head 标题 title 内容 content 时间 time组成
+        vat-表示使用内部的数据
+    */
     template:`<div>
         <slot s-for="msg in msgs"
         var-head="{{msg.head}}"
@@ -7,30 +11,37 @@ let card=san.defineComponent({
         var-content="{{msg.content}}" 
         var-time="{{msg.time}}"
         class="card">
-            标题{{head}}{{title}}{{content}}{{time}}
         </slot>    
     </div>`,
 
 });
 let taskMenu=san.defineComponent({
+    /*
+        组件的样式在父组件里设置，可以进行样式处理
+        如加粗 倾斜 下划线 调整视觉效果
+    */
     template:`<div class="container">
         <h1 class="title"><slot name="title"></slot>{{title}}</h1>
         <card msgs="{{msgs}}" s-ref="msgs">
-        <div class="card">
-            <h3 class="head">{{head}}</h3>
-            <div class="content">
-                <p><strong><i>标题:{{title}}</i></strong></p>
-                <p>内容:{{content}}</p>
-                <p>时间:{{time}}</p>
+            <div class="card">
+                <h3 class="head">{{head}}</h3>
+                <div class="content">
+                    <p><strong><i>标题:{{title}}</i></strong></p>
+                    <p>内容:{{content}}</p>
+                    <p>时间:{{time}}</p>
+                </div>
             </div>
-        </div>
         </card>
     </div>`,
     components:{
         "card":card
     },
     inited:function(){
-       // console.log(this.data.get("msgs"))
+        /*
+            当前组件的time不能替换上面的time 
+            确认tiem是card组件内部的数据
+        */
+       console.log(this.data.set("time","我是父组件的信息"))
     }
 });
 let myComponent=san.defineComponent({
