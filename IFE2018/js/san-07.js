@@ -20,7 +20,7 @@ let app=san.defineComponent({
 			el.classList.add("before-enter");
 			el.classList.add("enter");
 			el.classList.remove("before-enter");
-			
+			done();
         	},
 		
         	leave: function (el, done) {
