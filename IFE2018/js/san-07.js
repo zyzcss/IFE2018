@@ -23,15 +23,15 @@ let app=san.defineComponent({
 			done();
         	},
 		
-        	leave: function (el, done) {
+    	leave: function (el, done) {
 			el.classList.remove("enter");
 			el.classList.add("before-leave");
 			el.classList.add("leave");
 			el.classList.remove("before-leave");
 			//使用延时器会有BUG
 			//el.style.opacity获取为空 不能用if判断
-        		setTimeout(done,500);
-        	}    
+			setTimeout(done,500);
+    	}    
 	}
 })
 let myApp=new app();

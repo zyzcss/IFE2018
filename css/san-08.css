@@ -1,0 +1,35 @@
+.box{
+	width: 80%;
+	margin: 5px auto;
+	position: relative;
+	border:1px solid #ddd;
+	padding: 1rem 10rem 1rem 2rem;
+}
+.title{
+	font-size: 1.5rem;
+	display: inline-block;
+	margin-bottom: 0.2rem;
+}
+.content{
+	margin: 0;
+	font-size: 1rem;
+	overflow: hidden;
+}
+.up{
+	position: absolute;
+	cursor: pointer;
+	left: 95%;
+	top: 1.2rem;
+    border-bottom: 1.2rem solid #cbc;
+    border-left: 1rem  solid transparent;
+    border-right: 1rem  solid transparent;
+}
+.down{
+	position: absolute;
+	cursor: pointer;
+	left: 95%;
+	top: 1.2rem;
+    border-top: 1.2rem solid #cbc;
+    border-left: 1rem  solid transparent;
+    border-right: 1rem  solid transparent;
+}

@@ -70,7 +70,6 @@ var MyApp = san.defineComponent({
         enter: function (el, done) {
             var steps = 20;
             var currentStep = 0;
-
             function goStep() {
                 if (currentStep >= steps) {
                     el.style.opacity = 1;
